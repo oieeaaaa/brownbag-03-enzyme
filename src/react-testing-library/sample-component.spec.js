@@ -2,7 +2,7 @@ import React from "react";
 import HelloWorld, { Modal, Loader } from "./sample-component";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-describe("./sample-component.js", () => {
+describe("./sample-component.js — react-testing-library", () => {
   test("renders <HelloWorld />", () => {
     render(<HelloWorld />);
 

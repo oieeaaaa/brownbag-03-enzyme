@@ -27,9 +27,39 @@
 
 1. When using hooks use `React.<hook>` (i.e., `React.useState`, `React.useEffect`, etc...) so your `jest.spyOn` will work
 
+## Enzyme
+
+- An "intuitive" and flexible API
+
+### Setting up enzyme
+
+1. On your terminal, run `yarn add -D enzyme enzyme-adapter-react-16`
+1. To add the custom matchers for enzyme `yarn add -D jest-environment-enzyme jest-enzyme`
+1. On your `jest.config.js` change the following configs to this:
+
+```javascript
+// jest.config.js
+{
+  // A list of paths to modules that run some code to configure or set up the
+  // testing framework before each test
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js", "jest-enzyme"],
+
+  // The test environment that will be used for testing
+  testEnvironment: "enzyme",
+
+  // Options that will be passed to the testEnvironment
+  testEnvironmentOptions: {
+    enzymeAdapter: "react16",
+  },
+
+  //... rest of the configs
+}
+```
+
 ## Bonus
 
 - Try these custom jest matchers "@testing-library/jest-dom"
+- Try these custom enzyme matchers "jest-enzyme"
 
 ## Questions you might asked
 
